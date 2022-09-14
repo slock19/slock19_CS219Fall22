@@ -13,7 +13,7 @@ public class InvestmentCalculator {
         Scanner kbd = new Scanner(System.in);
 
         System.out.print("Enter the initial investment amount: ");
-        double amount = kbd.nextDouble();
+        int amount = kbd.nextInt();
 
         System.out.print("Enter the interest rate as a decimal: ");
         double interest = kbd.nextDouble();
