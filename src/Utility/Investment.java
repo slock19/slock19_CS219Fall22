@@ -19,7 +19,8 @@ public class Investment {
         }
         int amount = kbd.nextInt();
         if (amount <= 0){
-            System.out.printf("Error: initial deposit should be great than 0. You entered \"%d\"", kbd.nextInt()) ;
+            System.out.printf("Error: initial deposit should be great than 0. You entered \"%d\" ", amount) ;
+            return;
         }
 
         // interest rate
@@ -31,7 +32,8 @@ public class Investment {
         double interest = kbd.nextDouble();
         if (interest >= 0 && interest <= 1){
             System.out.printf("Error: interest rate should be expressed as a decimal between 0 and 1. " +
-                    "For example 8 percent should be entered as .08. You entered\"%f\"", kbd.nextDouble()) ;
+                    "For example 8 percent should be entered as .08. You entered\"%f\"", interest);
+            return;
         }
 
         // time
@@ -42,7 +44,8 @@ public class Investment {
         }
         int time = kbd.nextInt();
         if (time <= 0){
-            System.out.printf("Error: time should be great than 0. You entered \"%d\"", kbd.nextInt()) ;
+            System.out.printf("Error: time should be great than 0. You entered \"%d\"", time);
+            return;
         }
         //compound
         System.out.print("Enter the amount of times the interest will compound yearly: ");
@@ -53,7 +56,8 @@ public class Investment {
         double compound = kbd.nextDouble();
         if (compound > 0){
             System.out.printf("Error: time should be expressed as a number with a decimal greater than 0. " +
-                    "For example 8 percent should be entered as .08. You entered\"%f\"", kbd.nextDouble()) ;
+                    "For example 8 percent should be entered as .08. You entered\"%f\"", compound) ;
+            return;
         }
         System.out.println(investment(amount, interest, time, compound));
 
