@@ -1,0 +1,28 @@
+https: stands for Hypertext Transfer Protocol Secure
+M-Message, unencrypted clear text
+C-Encrypted message, cipher text
+E-Function, that encrypts M
+D-Function, that decrypts C
+K-Key
+
+Def of Cryptography:
+    The science and mathematics of transforming messages into "hidden" messages.
+        1) Symmetric cryptography
+            Sender and Receiver use the same key
+        2) Asymmetric cryptography
+            Sender and receiver use their own private key but also have public keys
+
+Ex.
+M = "attack"
+C = "buubdl"
+We shifted each character by 1.
+
+M = "zoo"
+C = "app"
+
+M = "attack"
+C = "nggnpx"
+We shifted each character by 13
+
+C = "wifx"
+M = ""

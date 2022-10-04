@@ -1,4 +1,4 @@
-import Utility.Investment; // Using the investment file from Utility
+import HW4.Investment; // Using the investment file from Utility
 
 import java.util.Scanner;
 
