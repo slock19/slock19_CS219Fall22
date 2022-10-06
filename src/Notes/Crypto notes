@@ -26,3 +26,11 @@ We shifted each character by 13
 
 C = "wifx"
 M = ""
+
+Frequency Analysis: when the output does not appear random.
+
+Exception: An error value that gets thrown at run time and caught to be handled
+    try {//}
+    catch{//backup plan}
+
+English keyboard goes from integer 32 to 126
