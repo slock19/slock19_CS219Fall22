@@ -1,13 +1,13 @@
-package UnladenSwallowSpeeds;
+package HW6;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class AverageSpeed {
+public class SwallowStats {
 
-    public static double avg_swallow_speed(){
+    public static void swallow_stats(){
 
         // connect to the webpage with data
         URL url = null;  // null is the nothing value
@@ -27,22 +27,35 @@ public class AverageSpeed {
         // connect to desired website
         double sum = 0.0;
         int count = 0;
+        double max = 0;
+        double min = 100;
         // read each line of the web file
         while (true){
             if (!s.hasNextLine())
                 break;
             String line = s.nextLine(); // will read a line from the website
 
-            if (line.indexOf("#") == -1){ // modify condition to look at length of the line
+            if (!line.contains("#") && line.length() > 0){ // modify condition to look at length of the line
                 sum = sum + Double.parseDouble(line);
                 count++;
+                if (max < Double.parseDouble(line)) {
+                    max = Double.parseDouble(line);
+
+                }
+
+                if (min > Double.parseDouble(line)) {
+                    min = Double.parseDouble(line);
+
+                }
             }
 
         }
-        return sum/count;
+        System.out.printf("Average swallow speed is %.2f \n", sum/count);
+        System.out.printf("The maximum swallow speed is %.1f \n", max);
+        System.out.printf("The minimum swallow speed is %.1f \n", min);
     }
 
     public static void main (String [] args){
-        System.out.printf("Average swallow speed is %.2f\n", avg_swallow_speed());
+       swallow_stats();
     }
 }
