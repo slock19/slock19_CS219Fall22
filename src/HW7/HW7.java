@@ -9,7 +9,11 @@ public class HW7 {
         See the tests in main.  The array should not be modified or reordered.
      */
     public static boolean hasAdjacent(String [] aos) {
-        return false; // just to shut up error message
+        for (int i = 0; i < (aos.length - 1); i++){
+            if (aos[i].equals(aos[i+1]))
+                return true;
+        }
+        return false;
     }
 
     /*
@@ -19,6 +23,11 @@ public class HW7 {
         Hint 1: need to look at all possible pairs of array entries.
      */
     public static boolean hasDuplicate(String [] aos) {
+        for (int i = 0; i < aos.length; i++){
+            for (int j = i + 1; j < aos.length - 1; j++){
+                if(aos[i].equals(aos[j]))
+                    return true;
+        }}
         return false; // shut up error message
     }
 
@@ -27,17 +36,23 @@ public class HW7 {
         to the target.  Same hint as hasDuplicate.  See the tests in main.
      */
     public static boolean goofy(int [] nums, int target) {
+        for (int i = 0; i < nums.length; i++){
+            for (int j = 1; j < nums.length - 1; j++){
+                if (nums[i] + (nums[j]) == target)
+                    return true;
+            }}
         return false; // shut up error message
     }
 
     /*
         Turn string s into an array of characters and return the array.
      */
+
     public static char [] make_array(String s) {
         char [] aoc = new char[s.length()];
-
-        // fill in code here
-
+        for (int i = 0; i < (s.length()); i++){
+            aoc[i] = s.charAt(i);
+        }
         return aoc;
     }
 
@@ -47,6 +62,12 @@ public class HW7 {
         Hint: Use make_array, Arrays.sort, and Arrays.equals directly.
      */
     public static boolean isAnagram(String s1, String s2) {
+        char [] sOne = make_array(s1);
+        char [] sTwo = make_array(s2);
+        Arrays.sort(sOne);
+        Arrays.sort(sTwo);
+        if (Arrays.equals(sOne,sTwo))
+            return true;
         return false;
     }
 
@@ -63,32 +84,56 @@ public class HW7 {
        numDifferent(nums) would return 15 because this list contains 15 different values.
      */
     public static int numDifferent(int [] nums) {
-        return -1; // shut up error message
+        int count = 0;
+        for (int i = 0; i < (nums.length - 1); i++){
+            if (nums[i] == (nums[i+1]))
+                count++;
+        }
+        return nums.length - count; // shut up error message
     }
 
     public static void main(String[] args) {
         String [] names = {"Harry", "Ron", "Draco", "Draco", "Hermione"};
         String [] fruit = {"apple", "pear", "banana", "apple", "orange", "guava"};
-        System.out.println(hasAdjacent(names));
-        System.out.println(!hasAdjacent(fruit));
-        System.out.println(hasDuplicate(names));
-        System.out.println(hasDuplicate(fruit));
-        System.out.println(!hasDuplicate(new String [] {"baseball", "hockey", "soccer", "football"}));
+       System.out.println(hasAdjacent(names));
+       System.out.println(!hasAdjacent(fruit));
 
-        int [] values = {2,7,11,15};
+       System.out.println(hasDuplicate(names));
+       System.out.println(hasDuplicate(fruit));
+       System.out.println(!hasDuplicate(new String [] {"baseball", "hockey", "soccer", "football"}));
+       System.out.println(hasDuplicate(new String [] {"baseball", "hockey", "soccer", "football"}));
+
+
+       int [] values = {2,7,11,15};
         System.out.println(goofy(values, 9));
         System.out.println(!goofy(values, 5));
+        System.out.println(goofy(values, 25));
+
 
         System.out.println(Arrays.equals(make_array("hello"),
-                new char [] {'h','e','l','l','o'}));
+              new char [] {'h','e','l','l','o'}));
+        System.out.println(Arrays.equals(make_array("computer"),
+                new char [] {'c','o','m','p','u', 't','e','r'}));
 
-        System.out.println(isAnagram("angered", "enraged"));
-        System.out.println(!isAnagram("pizza", "sauce"));
+
+       System.out.println(isAnagram("angered", "enraged"));
+       System.out.println(!isAnagram("pizza", "sauce"));
+        System.out.println(isAnagram("pizza", "sauce"));
 
         int [] nums = {3, 5, 5, 5, 8, 21, 21, 23, 34, 39, 39, 40, 40, 40, 41};
         System.out.println(numDifferent(nums) == 9);
 
-        int [] nums2 = {1, 2, 11, 17, 19, 20, 23, 24, 25, 26, 31, 34, 37, 40, 41};
-        System.out.println(numDifferent(nums2) == 15);
+       int [] nums2 = {1, 2, 11, 17, 19, 20, 23, 24, 25, 26, 31, 34, 37, 40, 41};
+      System.out.println(numDifferent(nums2) == 15);
+
+        int [] nums3 = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2};
+        System.out.println(numDifferent(nums3) == 2);
+
+        int [] nums4 = {4, 4, 4, 7, 4, 4, 4, 10, 4, 4, 4, 4, 20, 4, 4};
+        System.out.println(numDifferent(nums4) == 10);
+
+
     }
+
+
 }
