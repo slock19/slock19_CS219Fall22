@@ -1,3 +1,4 @@
+/*
 package Exam2;
 import ArrayExamples.Examples;
 import Wordle.Game;
@@ -46,3 +47,4 @@ public class Exam {
 
 }
 
+*/

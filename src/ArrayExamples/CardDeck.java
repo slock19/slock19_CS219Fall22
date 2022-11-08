@@ -37,5 +37,7 @@ public class CardDeck {
         System.out.println(Arrays.toString(build_deck()));
         shuffle(deck);
         System.out.println(Arrays.toString(shuffle(deck)));
+        System.out.println("49" + 4 + 9);
+        System.out.println(4 + 9 +"49");
     }
 }
