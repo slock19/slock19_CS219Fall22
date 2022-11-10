@@ -88,7 +88,7 @@ public class HW8 {
 
         //System.out.println(reverse(nums, 0, nums.length-1));
 
-        // Watchout! nums has been reversed
+        // Watch out! nums has been reversed
 
        System.out.println(Arrays.equals(
                 reverse(nums, 2, 5),     // reverse the middle four numbers
