@@ -1,5 +1,7 @@
 package Wordle;
 
+import Exam2.Exam2Redo;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -60,12 +62,12 @@ public class Game {
 // function that calls a function is called recursion
     public static void main(String[] args) {
         String [] words = load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt", 2309);
+        Exam2Redo.print_array_string(words);
 
         //pick a word at random
         Random rng = new Random();
         rng.setSeed(23);
         String word = words[rng.nextInt(0, words.length)];
-        System.out.println(word);
 
         // find the location of word in words
         System.out.println(indexOf(word, words));

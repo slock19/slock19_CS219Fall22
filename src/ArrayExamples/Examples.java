@@ -30,6 +30,7 @@ public class Examples {
         System.out.println(']');
     }
 
+
     public static void print_array2(int [] arr) {
         System.out.print('[');
 
