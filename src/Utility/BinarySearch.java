@@ -1,10 +1,10 @@
-package Utility;
+//package Utility;
 
 import java.util.Arrays;
 
-public class BinarySearch {
+//public class BinarySearch {
 
-    public static <T extends Comparable<T>> T bsearch(ArrayList<T> alt, T target){
-        return null;
-    }
-}
+    //public static <T extends Comparable<T>> T search(ArrayList<T> alt, T target){
+        //return null;
+    //}
+//}

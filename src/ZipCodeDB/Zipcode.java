@@ -3,7 +3,7 @@ package ZipCodeDB;
 /*
  *  Hold data about one zipcode
  */
-public class Zipcode implements Comparable<Zipcode>{
+public class Zipcode implements Comparable<Zipcode>, Distance {
 
 
     private String code;
@@ -41,5 +41,16 @@ public class Zipcode implements Comparable<Zipcode>{
     public int compareTo(Zipcode zc) {
         return this.code.compareTo(zc.code);
     }
+
+    @Override
+    public double distance(Zipcode zip) {
+        return 0; // fancy great circle distance
+    }
+
+    public WeatherObservation getWeatherdata(){}
+
+    // http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=44&lng=-74&username=edharcourt
+
+    String path = "http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=" + this.lat+ "&lng="+this.lng+"4&username=edharcourt";
 }
 
