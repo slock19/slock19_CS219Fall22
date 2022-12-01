@@ -1,4 +1,4 @@
-package InterfaceExample;
+/*package InterfaceExample;
 
 public class Point implements Distance{
     private double x;
@@ -29,6 +29,6 @@ public class Point implements Distance{
     public double getY() {
         return y;
     }
-}
+}*/
 
 

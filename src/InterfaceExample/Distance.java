@@ -1,4 +1,4 @@
-package InterfaceExample;
+/*package InterfaceExample;
 
 import ZipCodeDB.Zipcode;
 
@@ -11,4 +11,4 @@ public interface Distance {
     }
 
     double distance(Zipcode zip);
-}
+}*/

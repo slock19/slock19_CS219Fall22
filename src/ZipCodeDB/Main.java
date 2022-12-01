@@ -17,5 +17,8 @@ public class Main {
         System.out.println(db.findbyZip("hello"));
         System.out.println(db.search("43221"));
 
+        WeatherObservation wob = db.search("13617").getWeatherData();
+        System.out.println(wob);
+
     }
 }

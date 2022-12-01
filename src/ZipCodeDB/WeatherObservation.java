@@ -13,4 +13,14 @@ public class WeatherObservation {
         this.temperature = temperature;
         this.clouds = clouds;
     }
+
+    @Override
+    public String toString() {
+        return "WeatherObservation{" +
+                "humidity=" + humidity +
+                ", windspeed=" + windspeed +
+                ", temperature=" + temperature +
+                ", clouds='" + clouds + '\'' +
+                '}';
+    }
 }

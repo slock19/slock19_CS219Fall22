@@ -1,3 +1,4 @@
+/*
 package InterfaceExample;
 
 import java.util.ArrayList;
@@ -11,3 +12,4 @@ public class MainPoint {
         ArrayList<Point> drawing = new ArrayList<>();
     }
 }
+*/

@@ -1,9 +1,14 @@
 package ZipCodeDB;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
 /*
  *  Hold data about one zipcode
  */
-public class Zipcode implements Comparable<Zipcode>, Distance {
+public class Zipcode implements Comparable<Zipcode>, Distance, WeatherInfo {
 
 
     private String code;
@@ -47,10 +52,44 @@ public class Zipcode implements Comparable<Zipcode>, Distance {
         return 0; // fancy great circle distance
     }
 
-    public WeatherObservation getWeatherdata(){}
+    public WeatherObservation getWeatherData() {
+        // http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=44&lng=-74&username=edharcourt
+        URL url = null;    // null is the "nothing value"
+        Scanner s = null;
+        String path = "http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=" + this.lat + "&lng=-" + this.lng + "&username=edharcourt\n";
+        try {
+            url = new URL(path); // create a URL object for the path
+            s = new Scanner(url.openConnection().getInputStream());
+        } catch (
+                IOException e) {
+            throw new RuntimeException(e);
+        }
 
-    // http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=44&lng=-74&username=edharcourt
 
-    String path = "http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=" + this.lat+ "&lng="+this.lng+"4&username=edharcourt";
+        double humidity = 0, temp = 0, speed = 0;
+        String clouds = "";
+
+        while (s.hasNextLine()){
+            String line = s.nextLine();
+            if (line.indexOf("humidity") > 0){
+                humidity = Double.parseDouble(line.substring(line.indexOf(':') + 1, line.indexOf(',')));
+            }
+            if (line.indexOf("temperature") > 0){
+                temp = Double.parseDouble(line.substring(line.indexOf(':') + 1, line.indexOf(',')));
+            }
+            if (line.indexOf("windSpeed") > 0){
+                speed = Double.parseDouble(line.substring(line.indexOf(": \"") + 1, line.indexOf(',')));
+            }
+            if (line.indexOf("clouds") > 0){
+                clouds = (line.substring(line.indexOf(':') + 1, line.indexOf(',')));
+            }
+        }
+        WeatherObservation ob = new WeatherObservation(humidity, speed, temp, clouds);
+        return ob;
+    }
 }
+
+
+
+
 
