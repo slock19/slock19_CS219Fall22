@@ -64,6 +64,10 @@ public class Database {
         return null;
     }
 
+    public Zipcode max_latitude(){
+        return null;
+    }
+
     private Zipcode bsearch(String target, int low, int high){
         if (low > high){
             return null;
