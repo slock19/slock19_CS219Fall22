@@ -9,6 +9,8 @@ public class GUIPanel extends JPanel { //JPanel is the base class. GUIPanel is t
     private JButton submit;
     private JTextArea output;
 
+    private JButton northernmost;
+
     private Database db;     // the zipcode database
 
     public GUIPanel(){
@@ -23,6 +25,9 @@ public class GUIPanel extends JPanel { //JPanel is the base class. GUIPanel is t
         this.add(this.output);
 
         this.db = new Database(); // load zipcodes
+
+        this.northernmost = new JButton("Northernmost Zipcode");
+        this.add(this.northernmost);
     }
 
     class SubmitButtonListener implements ActionListener{
@@ -38,4 +43,5 @@ public class GUIPanel extends JPanel { //JPanel is the base class. GUIPanel is t
         }
 
     }
+
 }

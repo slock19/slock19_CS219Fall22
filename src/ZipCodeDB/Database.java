@@ -64,8 +64,15 @@ public class Database {
         return null;
     }
 
-    public Zipcode max_latitude(){
-        return null;
+    public Zipcode getNorthern(){
+        Zipcode north = zipcode 00000;
+        for (Zipcode zipcode : this.codes){
+            for (zipcode = 00000; zipcode <= 99999; zipcode++){
+                if lat >= north;
+                north = zipcode;
+            }
+        } //what i want it to do is start at the first zipcode and
+        // then check if lat is greater than the base case and repeat until all zipcodes have been searched
     }
 
     private Zipcode bsearch(String target, int low, int high){

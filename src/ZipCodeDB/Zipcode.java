@@ -87,6 +87,8 @@ public class Zipcode implements Comparable<Zipcode>, Distance, WeatherInfo {
         WeatherObservation ob = new WeatherObservation(humidity, speed, temp, clouds);
         return ob;
     }
+
+    //no errors in this code but won't run from an error in previous part I cant figure out.
 }
 
 
